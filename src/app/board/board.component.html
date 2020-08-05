@@ -1,0 +1,19 @@
+<div class="main-board">
+    <p *ngFor="let rows of playArea;let rowNumber=index"
+       class="row-number"
+       [ngStyle]="rowNumberTopDrift(rowNumber+1)">
+        {{rowNumber+1}}
+    </p>
+    <div class="quadrants-container">
+        <div *ngFor="let rows of playArea;let rowNumber=index;" class="row">
+            <div *ngFor="let quadrants of rows;let columnNumber=index;"
+                 class="quadrant"
+                 [ngStyle]="lightOrDark(rowNumber+1,columnNumber+1)">
+            </div>
+        </div>
+    </div>
+    <p class="column-letter" *ngFor="let columns of playArea[0];let columnNumber=index"
+       [ngStyle]="columnLetterLeftDrift(columnNumber+1)">
+        {{columns}}
+    </p>
+</div>
