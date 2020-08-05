@@ -2,18 +2,26 @@
     <p *ngFor="let rows of playArea;let rowNumber=index"
        class="row-number"
        [ngStyle]="rowNumberTopDrift(rowNumber+1)">
-        {{rowNumber+1}}
+        {{rowNumberTag(rowNumber)}}
     </p>
     <div class="quadrants-container">
         <div *ngFor="let rows of playArea;let rowNumber=index;" class="row">
             <div *ngFor="let quadrants of rows;let columnNumber=index;"
                  class="quadrant"
-                 [ngStyle]="lightOrDark(rowNumber+1,columnNumber+1)">
+                 (click)="arrayLogger()"
+                 [ngStyle]="lightOrDark(rowNumber+1,columnNumber+1)"
+                 >
+                    <pawn class="chess-piece" *ngIf="quadrants == 'p'"></pawn>
+                    <king class="chess-piece" *ngIf="quadrants == 'k'"></king>
+                    <queen class="chess-piece" *ngIf="quadrants == 'q'"></queen>
+                    <bishop class="chess-piece" *ngIf="quadrants == 'b'"></bishop>
+                    <knight class="chess-piece" *ngIf="quadrants == 't'"></knight>
+                    <rook class="chess-piece" *ngIf="quadrants == 'r'"></rook>
             </div>
         </div>
     </div>
     <p class="column-letter" *ngFor="let columns of playArea[0];let columnNumber=index"
        [ngStyle]="columnLetterLeftDrift(columnNumber+1)">
-        {{columns}}
+        {{columnLetterTag(columnNumber)}}
     </p>
 </div>
