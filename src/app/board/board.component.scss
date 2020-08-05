@@ -25,10 +25,14 @@
     height: calc(100%/8);
     width: 100%;
     background-color: black;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .quadrant{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: calc(100%/8);
 }
@@ -49,4 +53,8 @@
     position: absolute;
     color: white;
     bottom: .2vw;
+}
+
+.chess-piece{
+    background-color: transparent;
 }

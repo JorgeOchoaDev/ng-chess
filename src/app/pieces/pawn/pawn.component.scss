@@ -1,0 +1,15 @@
+*{
+    background-color: transparent;
+}
+
+svg{
+    width: calc(35vw/8);
+    height: calc(35vw/8);
+    fill: black;
+}
+
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
